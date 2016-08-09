@@ -15,12 +15,12 @@ gulp.task('browserify', () => {
     .pipe(gulp.dest('dist/src'))
 });
 
-// gulp.task('scss', function () {
-//   return gulp.src('./node_modules/grommet/scss/*.scss')
-//     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-//     .pipe(concat('style.css'))
-//     .pipe(gulp.dest('./dist/src/style'));
-// });
+gulp.task('scss', function () {
+  return gulp.src('./node_modules/grommet/scss/*.scss')
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(concat('style.css'))
+    .pipe(gulp.dest('./dist/src/style'));
+});
 
 gulp.task('connect', function() {
   connect.server();
